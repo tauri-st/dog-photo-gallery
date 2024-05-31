@@ -12,6 +12,7 @@ def check_breed(breed):
 
 @app.route("/", methods=["GET","POST"])
 def dog_image_gallery():
+  errors = []
   return render_template("dogs.html")
 
 
