@@ -13,6 +13,11 @@ def check_breed(breed):
 @app.route("/", methods=["GET","POST"])
 def dog_image_gallery():
   errors = []
+  if request.method == "POST":
+      #gets the breed name from the form,
+      #saves data from request method
+      #breed string correspond to the dropdown menu
+      breed = request.form.get("breed")
   return render_template("dogs.html")
 
 
