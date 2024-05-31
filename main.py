@@ -11,7 +11,7 @@ def check_breed(breed):
   return "/".join(breed.split("-"))
 
 @app.route("/", methods=["GET","POST"])
-def hello_world():
+def dog_image_gallery():
   return render_template("dogs.html")
 
 
