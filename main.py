@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import requests
 
 #imports a dictionary of data from dog_breeds.py and "prettifies", or styles, the dog names when they appear in the HTML page
 from dog_breeds import prettify_dog_breed
@@ -9,7 +10,7 @@ app = Flask("app")
 def check_breed(breed):
   return "/".join(breed.split("-"))
 
-@app.route("/")
+@app.route("/", methods=["GET","POST"])
 def hello_world():
   return render_template("dogs.html")
 
