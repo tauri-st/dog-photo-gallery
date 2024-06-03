@@ -18,6 +18,7 @@ def dog_image_gallery():
     #saves data from request method
     #breed string correspond to the dropdown menu
     breed = request.form.get("breed")
+    number = request.form.get("number")
     if not breed:
       errors.append("Please choose a breed first!")
     if breed:
