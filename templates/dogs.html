@@ -157,7 +157,11 @@
   </div>
   <div class="content">
     <h3>{{breed}}</h3>
-        <img class="dogimage" src="https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2431.jpg"">
+    {% for image in images %}
+      <div class="dogcontainer">
+        <img class="dogimage" src={{image}}>
+      </div>
+    {% endfor %}
   </div>
 </body>
 </html>
