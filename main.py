@@ -21,6 +21,8 @@ def dog_image_gallery():
     number = request.form.get("number")
     if not breed:
       errors.append("Please choose a breed first!")
+    if not number:
+      errors.append("Please choose a number of images first!")
     if breed:
       response = requests.get("https://dog.ceo/api/breed/" + check_breed(breed) + "/images/random/30")
       data = response.json()
