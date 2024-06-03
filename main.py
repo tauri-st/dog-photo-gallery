@@ -18,13 +18,13 @@ def dog_image_gallery():
     #saves data from request method
     #breed string correspond to the dropdown menu
     breed = request.form.get("breed")
-  if not breed:
-    errors.append("Please choose a breed first!")
-  if breed:
-    response = requests.get("https://dog.ceo/api/breed/" + check_breed(breed) + "/images/random/30")
-    data = response.json()
-    dog_images = data["message"]
-    return render_template("dogs.html", images=dog_images, breed=prettify_dog_breed(breed), errors=[])
+    if not breed:
+      errors.append("Please choose a breed first!")
+    if breed:
+      response = requests.get("https://dog.ceo/api/breed/" + check_breed(breed) + "/images/random/30")
+      data = response.json()
+      dog_images = data["message"]
+      return render_template("dogs.html", images=dog_images, breed=prettify_dog_breed(breed), errors=[])
   #This is a stand in while no drop down menu exists yet
   return render_template("dogs.html", images=[], breed="", errors=errors)
 
