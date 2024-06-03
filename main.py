@@ -24,7 +24,7 @@ def dog_image_gallery():
     if not number:
       errors.append("Please choose a number of images first!")
     if breed and number:
-      response = requests.get("https://dog.ceo/api/breed/" + check_breed(breed) + "/images/random" + number)
+      response = requests.get("https://dog.ceo/api/breed/" + check_breed(breed) + "/images/random/" + number)
       data = response.json()
       dog_images = data["message"]
       return render_template("dogs.html", images=dog_images, breed=prettify_dog_breed(breed), errors=[])
