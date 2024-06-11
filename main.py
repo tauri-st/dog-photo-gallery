@@ -33,6 +33,10 @@ def dog_image_gallery():
 @app.route("/random", methods=["POST"])
   def get_random():
     response = requests.get("https://dog.ceo/api/breeds/image/random")
+    data = response.json()
+    #the message key is from the JSON data extracted by the json method above
+    dog_images = [data["message"]]
+
 
 
 app.debug = True
