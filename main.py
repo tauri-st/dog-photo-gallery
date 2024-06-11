@@ -28,7 +28,6 @@ def dog_image_gallery():
       data = response.json()
       dog_images = data["message"]
       return render_template("dogs.html", images=dog_images, breed=prettify_dog_breed(breed), errors=[])
-  #This is a stand in while no drop down menu exists yet
   return render_template("dogs.html", images=[], breed="", errors=errors)
 
 
